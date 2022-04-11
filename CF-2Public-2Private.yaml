@@ -1,3 +1,5 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
 # This creates a VPC with two public subnets and two private subnets in two Availability Zones, 
 # together with a NAT Gateway and associated routing. Change the Availability Zone locations as needed.
 
