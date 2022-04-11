@@ -420,9 +420,9 @@ Resources:
       Subnets:
         - !Ref PrivateSubnet1
         - !Ref PrivateSubnet2
-      Tags:
-        - Key: Name
-          Value: !Sub "${AWS::StackName}-WorkerNodesAutoScalingGroup"
+#      Tags:
+#        - Key: Name
+#          Value: !Sub "${AWS::StackName}-WorkerNodesAutoScalingGroup"
   WorkerNodesLaunchConfiguration:
     Type: AWS::AutoScaling::LaunchConfiguration
     # Wait until cluster is ready before launching worker nodes
@@ -435,7 +435,7 @@ Resources:
         - !Ref AWS::Region
         - Standard
       InstanceType: !Ref WorkerNodesInstanceType
-      KeyName: !Ref KeyPairName
+#      KeyName: !Ref KeyPairName
       SecurityGroups:
         - !Ref WorkerNodesSecurityGroup
 
