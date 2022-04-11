@@ -1,3 +1,6 @@
+# Usage from command line:
+# aws cloudformation --region us-east-1 create-stack --stack-name vpc- --template-body file://CF-VPC-2Public-2Private.yaml
+
 Resources:
   ## VPC
   PubPrivateVPC:
@@ -9,7 +12,7 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref PubPrivateVPC
-      AvailabilityZone: us-east-2a
+      AvailabilityZone: us-east-1a
       CidrBlock: 10.0.10.0/24
       MapPublicIpOnLaunch: true
  
@@ -17,7 +20,7 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref PubPrivateVPC
-      AvailabilityZone: us-east-2b
+      AvailabilityZone: us-east-1b
       CidrBlock: 10.0.20.0/24
       MapPublicIpOnLaunch: true
  
@@ -25,7 +28,7 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref PubPrivateVPC
-      AvailabilityZone: us-east-2a
+      AvailabilityZone: us-east-1a
       CidrBlock: 10.0.1.0/24
       MapPublicIpOnLaunch: false
  
@@ -33,7 +36,7 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref PubPrivateVPC
-      AvailabilityZone: us-east-2b
+      AvailabilityZone: us-east-1b
       CidrBlock: 10.0.2.0/24
       MapPublicIpOnLaunch: false
  
