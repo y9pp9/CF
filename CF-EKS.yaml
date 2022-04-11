@@ -1,3 +1,6 @@
+# Usage from command line:
+# aws cloudformation --region <<YOUR-REGION>> create-stack --stack-name vpc- --template-body file://CF-2Public-2Private.yaml
+
 # This Cloudformation template will creae following modules
 # VPC, 2-public subnest, InternetGateway, 2 private subnets, 2 Persistence subnets (private)
 # EKS ckuster with One node group
@@ -36,8 +39,8 @@ Mappings:
   # https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html
   # IMPORTANT NOTE: Choose AWS EKS compatible ami IDs only
   EksAmiIds:    
-    us-east-2:
-      Standard: ami-0b614a5d911900a9b
+    us-east-1:
+      Standard: ami-0c6f20e00e2f5869a
     
 Resources:
   #============================================================================#
