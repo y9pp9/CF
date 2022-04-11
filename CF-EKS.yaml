@@ -259,12 +259,18 @@ Resources:
       Name: !Ref AWS::StackName
       Version: "1.21"
       RoleArn: !GetAtt ControlPlaneRole.Arn
+      Logging:
+        ClusterLogging:
+          EnabledTypes:
+            - Type: api
+            - Type: audit
       ResourcesVpcConfig:
         SecurityGroupIds:
           - !Ref ControlPlaneSecurityGroup
         SubnetIds:
           - !Ref PrivateSubnet1
           - !Ref PrivateSubnet2 
+        EndpointPublicAccess: false
   ControlPlaneRole:
     Type: AWS::IAM::Role
     Properties:
